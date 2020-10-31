@@ -1,0 +1,106 @@
+.container {
+    max-width: 120rem;
+    background-color: var(--color-grey-light-1);
+    margin: 8rem auto;
+    box-shadow: var(--shadow-dark);
+
+    min-height: 50rem;
+    @include respond(bp-largest) {
+        margin: 0;
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
+.header {
+    font-size: 1.4rem;
+    height: 7rem;
+    background-color: #fff;
+    border-bottom: var(--line);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include respond(bp-vsm) {
+        flex-wrap: wrap;
+        align-content: space-around;
+        height: 11rem;
+    }
+    
+}
+
+.content {
+    display: flex;
+
+    @include respond(bp-large-p) {
+        flex-direction: column;
+    }
+    
+}
+
+.sidebar {
+    background-color: var(--color-grey-dark-1);
+    /*
+        flex-grow: 0;
+        flex-shrink: 0; cox we dont want it to be shrink
+        flex-basis: 18% we want this box to have 18% of the container's width
+    */
+    flex: 0 0 18%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hotel-view {
+    // height: 80rem;
+    // // background-color: var(--color-grey-dark-1);
+    flex: 1; // so this side will have the rest of the width
+}
+
+.detail {
+    font-size: 1.4rem;
+
+    display: flex;
+    background-color: var(--color-grey-light-1);
+    border-bottom: var(--line);
+    padding: 4.5rem;
+
+    @include respond(bp-large-p) {
+        padding: 3rem;
+    }
+
+    @include respond(bp-small) {
+        flex-direction: column;
+    }
+
+    @include respond(phone) { 
+        font-size: 1.15rem;
+    };
+}
+
+.description {
+    // font-size: 1.4rem;
+    background-color: #fff;
+    flex: 0 0 60%;
+    margin-right: 4.5rem;
+    padding: 3rem;
+    box-shadow: var(--shadow-light);
+
+    @include respond(bp-large-p) {
+        padding: 2rem;
+    }
+
+    @include respond(bp-small) {
+        margin-right: 0;
+        margin-bottom: 3rem;
+    }
+}
+
+.user-reviews {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
